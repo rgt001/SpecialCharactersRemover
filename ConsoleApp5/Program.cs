@@ -10,8 +10,8 @@ public class Program
 
     public static void Main()
     {
-        int textLength = 1000;
-        int rowsAmmount = 10;
+        int textLength = 5000;
+        int rowsAmmount = 1000;
 
         string randomText = GenerateRandomText(textLength);
         Stopwatch sw = new Stopwatch();
@@ -29,7 +29,7 @@ public class Program
         sw.Reset();
         for (int i = 0; i < rowsAmmount; i++)
         {
-            SpecialCharacters.RemoveSpecialCharacters3(randomText);
+            SpecialCharacters.RemoveSpecialCharacters2(randomText);
         }
         sw.Stop();
         Console.WriteLine($"RemoveSpecialCharacters took {sw.ElapsedTicks}");

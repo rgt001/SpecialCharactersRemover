@@ -173,6 +173,11 @@ namespace ConsoleApp5
             return pattern.Replace(input, string.Empty);
         }
 
+        /// <summary>
+        /// This method was created by Mehdi Golzari(https://www.linkedin.com/in/mehdigolzariofficial/)
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         public static string RemoveSpecialCharacters(string input)
         {
             string pattern = @"[^a-zA-Z0-9\u0600-\u06ff\s]";
