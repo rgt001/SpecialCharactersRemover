@@ -12,14 +12,33 @@ namespace ConsoleApp5
             specialCharacters = new HashSet<int>();
 
             // Adiciona os códigos decimais dos caracteres especiais à HashSet
-            for (int i = 0; i <= 31; i++)
+            int i;
+            for (i = 0; i <= 31; i++)
+            {
+                specialCharacters.Add(i);
+            }
+            i++;
+            for (; i <= 47; i++)
+            {
+                specialCharacters.Add(i);
+            }
+            for (i = 58; i <= 64; i++)
             {
                 specialCharacters.Add(i);
             }
 
-            specialCharacters.Add(127);
-
             // Caracteres especiais adicionais
+            specialCharacters.Add(91); // [
+            specialCharacters.Add(92); // \
+            specialCharacters.Add(93); // ]
+            specialCharacters.Add(94); // ^
+            specialCharacters.Add(95); // _
+            specialCharacters.Add(96); // `
+            specialCharacters.Add(123); // {
+            specialCharacters.Add(124); // {
+            specialCharacters.Add(125); // {
+            specialCharacters.Add(126); // {
+            specialCharacters.Add(127); // Del
             specialCharacters.Add(128); // Ç
             specialCharacters.Add(129); // ü
             specialCharacters.Add(130); // é
@@ -159,9 +178,9 @@ namespace ConsoleApp5
             int currentChar = 0;
             for (int i = 0; i < input.Length; i++)
             {
-                if (specialCharacters.Contains(resultCharacters[i]))
+                if (!specialCharacters.Contains((int)input[i]))
                 {
-                    resultCharacters[currentChar++] = resultCharacters[i];
+                    resultCharacters[currentChar++] = input[i];
                 }
             }
 

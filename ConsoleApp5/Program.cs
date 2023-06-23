@@ -16,11 +16,16 @@ public class Program
         string randomText = GenerateRandomText(textLength);
         Stopwatch sw = new Stopwatch();
 
+
+        string t1;
+        string t2;
+        string t3;
+
         SpecialCharacters.RemoveSpecialCharacters(randomText);
         sw.Start();
         for (int i = 0; i < rowsAmmount; i++) 
         {
-            SpecialCharacters.RemoveSpecialCharacters(randomText);
+            t1 = SpecialCharacters.RemoveSpecialCharacters(randomText);
         }
         sw.Stop();
         Console.WriteLine($"RemoveSpecialCharacters took {sw.ElapsedTicks}");
@@ -29,7 +34,7 @@ public class Program
         sw.Reset();
         for (int i = 0; i < rowsAmmount; i++)
         {
-            SpecialCharacters.RemoveSpecialCharacters2(randomText);
+            t2 = SpecialCharacters.RemoveSpecialCharacters2(randomText);
         }
         sw.Stop();
         Console.WriteLine($"RemoveSpecialCharacters took {sw.ElapsedTicks}");
@@ -38,7 +43,7 @@ public class Program
         sw.Reset();
         for (int i = 0; i < rowsAmmount; i++)
         {
-            SpecialCharacters.RemoveSpecialCharacters3(randomText);
+            t3 = SpecialCharacters.RemoveSpecialCharacters3(randomText);
         }
         sw.Stop();
         Console.WriteLine($"RemoveSpecialCharacters took {sw.ElapsedTicks}");
